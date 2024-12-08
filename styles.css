@@ -161,17 +161,22 @@ p {
 }
 
 .profile-image {
-  width: 256px;
+  width: 400px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.orcid-logo {
+  width: 30px;
+  height: auto;
 }
 
 /* Cards and Sections */
 .education-card,
 .research-card,
 .publication-card {
-  background: #f8f9fa;
+  background: #f8faf9;
   padding: 2rem;
   border-radius: 8px;
   margin-top: 2rem;
@@ -205,6 +210,8 @@ p {
   color: var(--text-light);
   font-size: 1.1rem;
 }
+
+
 
 .project {
   margin-bottom: 3rem;
