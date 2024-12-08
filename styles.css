@@ -160,7 +160,7 @@ p {
   height: 24px;
 }
 
-.profile-image {
+img.profile-image {
   width: 600px;
   height: auto;
   border-radius: 8px;
@@ -363,7 +363,7 @@ button[type="submit"]:hover {
 
   .profile-image {
     width: 100%;
-    max-width: 256px;
+    max-width: 400px;
   }
 }
 
