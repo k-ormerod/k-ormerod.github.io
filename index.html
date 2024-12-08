@@ -223,18 +223,27 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.navigation ul').classList.toggle('open');
-        });
-
-        // Add active class to navigation links
-        document.querySelectorAll('.navigation a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelectorAll('.navigation a').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-                // Close mobile menu when clicking a link
-                document.querySelector('.navigation ul').classList.remove('open');
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.navigation ul');
+    
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+    
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = event.target.closest('.navigation');
+                if (!isClickInsideNav && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+    
+            // Close menu when window is resized above mobile breakpoint
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
             });
         });
     </script>

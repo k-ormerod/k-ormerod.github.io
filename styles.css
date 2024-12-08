@@ -309,7 +309,11 @@ button[type="submit"]:hover {
 
   .menu-toggle {
     display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
     cursor: pointer;
+    padding: 0.5rem;
   }
 
   .navigation ul {
@@ -353,6 +357,34 @@ button[type="submit"]:hover {
   .profile-image {
     width: 100%;
     max-width: 256px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block;
+  }
+
+  .navigation ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: white;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .navigation ul.show {
+      display: flex;
+  }
+
+  .navigation {
+      position: relative;
   }
 }
 
