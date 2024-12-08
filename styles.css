@@ -1,74 +1,390 @@
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+:root {
+  --primary-color: #115e59;  /* Dark teal */
+  --primary-light: #14b8a6;  /* Light teal */
+  --background: #ffffff;
+  --text-color: #1a1a1a;
+  --text-light: #666666;
+  --spacing-unit: 2rem;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Crimson Pro', serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--background);
+}
+
+/* Header and Navigation */
 header {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: var(--background);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 1000;
 }
 
 .navigation {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem var(--spacing-unit);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
 .navigation ul {
-  list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
+  list-style: none;
 }
 
-.navigation ul li {
-  margin: 0;
-}
-
-.navigation ul li a {
-  color: #fff;
+.navigation a {
+  color: var(--text-color);
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover,
+.navigation a.active {
+  color: var(--primary-color);
 }
 
 .menu-toggle {
   display: none;
-  background: #444;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  cursor: pointer;
 }
 
+/* Main Content */
 main {
-  padding: 2rem;
+  padding-top: 4rem;
 }
 
 section {
-  margin: 2rem 0;
+  padding: var(--spacing-unit);
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
 }
 
-footer {
-  text-align: center;
+.content-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Typography */
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+/* Components */
+.cta-button {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--background);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.cta-button:hover {
+  background: var(--primary-light);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-links a {
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.profile-image {
+  width: 256px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Cards and Sections */
+.education-card,
+.research-card,
+.publication-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.research-interests ul,
+.education-card ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.education-card li {
+  margin-bottom: 1.5rem;
+}
+
+.degree {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-color);
+}
+
+.institution,
+.thesis {
+  color: var(--text-light);
+  font-size: 1rem;
+}
+
+.research-interests li {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.project {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.project-title {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+/* Publication Styles */
+.publication-card {
+  margin-bottom: 2rem;
+}
+
+.publication-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.publication-authors {
+  font-style: italic;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.publication-venue {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.contact-form {
   padding: 1rem;
-  background: #333;
-  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #115e59;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: blue;
 }
 
 @media (max-width: 768px) {
+  .contact-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
   .menu-toggle {
     display: block;
+    cursor: pointer;
   }
 
   .navigation ul {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background);
     flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   }
 
-  .navigation ul.open {
+  .navigation ul.active {
     display: flex;
+  }
+
+  .navigation li {
+    padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --spacing-unit: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  .profile-image {
+    width: 100%;
+    max-width: 256px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Print Styles */
+@media print {
+  header {
+    position: static;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  .cta-button,
+  .social-links,
+  .menu-toggle {
+    display: none;
   }
 }
