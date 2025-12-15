@@ -427,3 +427,14 @@ button[type="submit"]:hover {
     display: none;
   }
 }
+
+.project-with-image {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.project-with-image img {
+    height: 380px;
+    border-radius: 6px;
+}
