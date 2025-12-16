@@ -451,3 +451,7 @@ button[type="submit"]:hover {
         margin-top: 1rem;
     }
 }
+
+.journal {
+    font-weight: 600; /* or 700 for full bold */
+}
