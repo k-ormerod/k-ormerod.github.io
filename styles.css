@@ -438,3 +438,16 @@ button[type="submit"]:hover {
     height: 380px;
     border-radius: 6px;
 }
+
+@media (max-width: 768px) {
+    .project-with-image {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-with-image img {
+        width: 100%;
+        height: auto;
+        margin-top: 1rem;
+    }
+}
