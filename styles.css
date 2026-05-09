@@ -201,10 +201,14 @@ img.profile-image {
   margin-bottom: 1.5rem;
 }
 
+.education-card h3 {
+  color: var(--primary-color);
+}
+
 .degree {
   font-weight: 600;
   font-size: 1.1rem;
-  color: var(--text-color);
+  color: var(--primary-color);
 }
 
 .institution,
@@ -238,6 +242,22 @@ img.profile-image {
 .project-description {
   color: var(--text-light);
   margin-bottom: 1.5rem;
+}
+
+/* Proposals */
+.proposal-card {
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.proposal {
+  margin-bottom: 1.5rem;
+}
+
+.proposal:last-child {
+  margin-bottom: 0;
 }
 
 /* Publication Styles */
