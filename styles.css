@@ -43,6 +43,11 @@ header {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--primary-color);
+  text-decoration: none;
+}
+
+.site-title:hover {
+  color: var(--primary-light);
 }
 
 .navigation ul {
@@ -73,6 +78,9 @@ main {
 
 section {
   padding: var(--spacing-unit);
+}
+
+.home-section {
   min-height: calc(100vh - 4rem);
   display: flex;
   align-items: center;

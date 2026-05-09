@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Katherine Ormerod</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="index.html" class="site-title">Katherine Ormerod</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="extra.html">Extra</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <div class="content-wrapper">
+                <h2>About Me</h2>
+                <div class="text-content">
+                    <p>I'm a third year PhD student at Liverpool John Moores University supervised by Dr Renske Smit, studying emission line galaxies in the Epoch of Reionisation,
+                        primarily using JWST NIRSpec spectroscopy. Before this, I completed an MSc by Research at
+                        the University of Manchester, where I studied the size and shape evolution of galaxies using
+                        JWST NIRCam data, supervised by Prof. Christopher Conselice.
+                        I am interested in the formation and evolution of galaxies,
+                        dust formation, and galaxy morphology. I am also interested in science communication and outreach.
+                    </p>
+
+                    <div class="education-card">
+                        <h3>Education</h3>
+                        <ul>
+                            <li>
+                                <div class="degree">PhD in Astrophysics</div>
+                                <div class="institution">Liverpool John Moores University, 2023 – present</div>
+                                <div class="thesis">Emission line galaxies in the Epoch of Reionisation with JWST spectroscopy</div>
+                                <div class="supervisor">Supervisor: Dr Renske Smit</div>
+                            </li>
+                            <li>
+                                <div class="degree">MSc by Research, Astronomy &amp; Astrophysics</div>
+                                <div class="institution">University of Manchester, 2022–2023</div>
+                                <div class="result">Merit</div>
+                                <div class="thesis">
+                                    <a href="https://research.manchester.ac.uk/en/studentTheses/the-size-and-shape-evolution-of-galaxies-using-the-james-webb-spa">Thesis: The Size and Shape Evolution of Galaxies using the James Webb Space Telescope</a>
+                                </div>
+                                <div class="supervisor">Supervisor: Prof. Christopher Conselice</div>
+                            </li>
+                            <li>
+                                <div class="degree">BSc (Hons), Physics with Astrophysics and Cosmology</div>
+                                <div class="institution">Lancaster University, 2018–2021</div>
+                                <div class="result">Upper Second Class Honours</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="research-interests">
+                        <h2>Research Interests</h2>
+                        <ul>
+                            <li>Galaxy formation and evolution</li>
+                            <li>The Epoch of Reionisation</li>
+                            <li>Galaxy morphology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Katherine Ormerod</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.navigation ul');
+
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = event.target.closest('.navigation');
+                if (!isClickInsideNav && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

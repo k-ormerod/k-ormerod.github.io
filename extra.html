@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra | Katherine Ormerod</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="index.html" class="site-title">Katherine Ormerod</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="extra.html" class="active">Extra</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="conferences" class="conferences-section">
+            <div class="content-wrapper">
+                <h2>Conferences</h2>
+                <div class="conferences-grid">
+                    <div class="conference-card">
+                        <h3>Conference Talks</h3>
+                        <div class="conference-talk">
+                            <h4>First Galaxies</h4>
+                            <p class="info">Oxford, UK<br>April 2025<br>Contributed talk</p>
+                        </div>
+                        <div class="conference-talk">
+                            <h4>Dust and gas throughout cosmic time</h4>
+                            <p class="info">Hiroshima, Japan<br>December 2024<br>Contributed talk (remote)</p>
+                        </div>
+                        <div class="conference-talk">
+                            <h4>National Astronomy Meeting</h4>
+                            <p class="info">Hull, UK<br>July 2024<br>Contributed talk</p>
+                        </div>
+                        <div class="conference-talk">
+                            <h4>Extreme galaxies in their extreme environments at extremely early epochs</h4>
+                            <p class="info">Reykjavik, Iceland<br>April 2024<br>Contributed talk</p>
+                        </div>
+                        <div class="conference-talk">
+                            <h4>Raising the veil on star formation near and far</h4>
+                            <p class="info">Cambridge, UK<br>April 2024<br>Contributed talk</p>
+                        </div>
+                        <div class="conference-talk">
+                            <h4>National Astronomy Meeting</h4>
+                            <p class="info">Cardiff, UK<br>July 2023<br>Contributed talk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proposals" class="proposals-section">
+            <div class="content-wrapper">
+                <h2>Successful Proposals</h2>
+                <div class="proposals-grid">
+                    <div class="proposal-card">
+                        <div class="proposal">
+                            <h4>Constraining Dust Formation at Cosmic Dawn with Luminous UV Bump Galaxies</h4>
+                            <p class="info">PI, JWST NIRSpec IFU<br>Observing time: 19 hours</p>
+                        </div>
+                        <div class="proposal">
+                            <h4>Unveiling dust build up in a 'UV bump' galaxy at z=7.1 with JWST+NOEMA</h4>
+                            <p class="info">Co-PI, NOEMA interferometer<br>Observing time: 16 hours</p>
+                        </div>
+                        <div class="proposal">
+                            <h4>The 2175Å UV bump as a signpost of NIRCam dark star formation</h4>
+                            <p class="info">Co-PI, NOEMA interferometer<br>Observing time: 25 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="outreach" class="outreach-section">
+            <div class="content-wrapper">
+                <h2>Outreach</h2>
+                <div class="outreach-grid">
+                    <div class="outreach-card">
+                        <div class="outreach">
+                            <h4>Careers talks</h4>
+                            <p class="info">Delivered talks to high schools and sixth forms about my research and career path.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Katherine Ormerod</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.navigation ul');
+
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = event.target.closest('.navigation');
+                if (!isClickInsideNav && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

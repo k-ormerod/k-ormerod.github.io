@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Katherine Ormerod</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="index.html" class="site-title">Katherine Ormerod</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="extra.html">Extra</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="research" class="research-section">
+            <div class="content-wrapper">
+                <div class="research-grid">
+                    <h2>My Projects</h2>
+                    <div class="project">
+                        <h4>Emission Line Galaxies in the Epoch of Reionisation</h4>
+                        <p>Studying the properties of Spitzer/IRAC excess galaxies in the Epoch of Reionisation with
+                            NIRSpec spectroscopy.</p>
+                    </div>
+                    <div class="project project-with-image">
+                        <img src="001576_uv_bump_windows.png" alt="2175Å UV bump illustration" class="project-image">
+                        <div class="project-text">
+                            <h4>The 2175Å UV Bump at High Redshift</h4>
+                            <p>
+                                Identifying the 2175Å UV bump in high-redshift galaxies,
+                                and investigating the properties of dust in the early
+                                Universe and formation mechanisms.
+                            <a href="https://ui.adsabs.harvard.edu/abs/2025arXiv250221119O/abstract"
+                            class="publication-link">Find out more →</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Katherine Ormerod</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.navigation ul');
+
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = event.target.closest('.navigation');
+                if (!isClickInsideNav && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && navMenu.classList.contains('show')) {
+                    navMenu.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
